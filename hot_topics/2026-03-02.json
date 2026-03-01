@@ -1,0 +1,66 @@
+{
+  "date": "2026-03-02 03:24",
+  "total": 10,
+  "topics": [
+    {
+      "source": "Hacker News",
+      "title": "Ghostty – Terminal Emulator",
+      "hot": 373,
+      "url": "https://ghostty.org/docs"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Microgpt",
+      "hot": 1455,
+      "url": "http://karpathy.github.io/2026/02/12/microgpt/"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Why XML Tags Are So Fundamental to Claude",
+      "hot": 77,
+      "url": "https://glthr.com/XML-fundamental-to-Claude"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Decision trees – the unreasonable power of nested decision rules",
+      "hot": 301,
+      "url": "https://mlu-explain.github.io/decision-tree/"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Flightradar24 for Ships",
+      "hot": 112,
+      "url": "https://atlas.flexport.com/"
+    },
+    {
+      "source": "Hacker News",
+      "title": "We do not think Anthropic should be designated as a supply chain risk",
+      "hot": 729,
+      "url": "https://twitter.com/OpenAI/status/2027846016423321831"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Python Type Checker Comparison: Empty Container Inference",
+      "hot": 15,
+      "url": "https://pyrefly.org/blog/container-inference-comparison/"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Interview with Øyvind Kolås, GIMP developer (2017)",
+      "hot": 78,
+      "url": "https://www.gimp.org/news/2026/02/22/%C3%B8yvind-kol%C3%A5s-interview-ww2017/"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Show HN: Audio Toolkit for Agents",
+      "hot": 17,
+      "url": "https://github.com/shiehn/sas-audio-processor"
+    },
+    {
+      "source": "Hacker News",
+      "title": "How Dada Enables Internal References",
+      "hot": 9,
+      "url": "https://smallcultfollowing.com/babysteps/blog/2026/02/27/dada-internal-references/"
+    }
+  ]
+}
