@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI工具导航 | 最全AI工具收录</title>
+  <meta name="description" content="收录最新最全的AI工具，包括写作、绘图、编程、视频、办公等分类，每日更新">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; color: #333; }
+    
+    header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }
+    header h1 { font-size: 2.2em; margin-bottom: 8px; }
+    header p { opacity: 0.9; font-size: 1.1em; }
+    .search-bar { margin: 20px auto; max-width: 500px; display: flex; }
+    .search-bar input { flex: 1; padding: 12px 16px; border: none; border-radius: 8px 0 0 8px; font-size: 1em; outline: none; }
+    .search-bar button { padding: 12px 20px; background: #4CAF50; color: white; border: none; border-radius: 0 8px 8px 0; cursor: pointer; font-size: 1em; }
+
+    .categories { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 20px; max-width: 1100px; margin: 0 auto; }
+    .cat-btn { padding: 6px 16px; border: 2px solid #667eea; border-radius: 20px; background: white; color: #667eea; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
+    .cat-btn:hover, .cat-btn.active { background: #667eea; color: white; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .section { margin-bottom: 40px; }
+    .section h2 { font-size: 1.3em; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid #667eea; color: #444; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    
+    .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .card-icon { font-size: 2em; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: #f0f0ff; border-radius: 10px; }
+    .card-name { font-weight: 700; font-size: 1.05em; }
+    .card-tag { font-size: 0.75em; color: #667eea; background: #f0f0ff; padding: 2px 8px; border-radius: 10px; margin-top: 2px; display: inline-block; }
+    .card-desc { font-size: 0.88em; color: #666; line-height: 1.5; }
+    .card-free { position: absolute; top: 12px; right: 12px; font-size: 0.72em; padding: 2px 8px; border-radius: 10px; }
+    .free { background: #e8f5e9; color: #2e7d32; }
+    .paid { background: #fff3e0; color: #e65100; }
+    .freemium { background: #e3f2fd; color: #1565c0; }
+    .card { position: relative; }
+
+    footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.9em; }
+    footer a { color: #667eea; }
+
+    @media (max-width: 600px) { header h1 { font-size: 1.6em; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 AI工具导航</h1>
+  <p>发现最好用的AI工具，每日更新 · 精选收录</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="搜索工具名称或功能..." oninput="filterTools()">
+    <button onclick="filterTools()">搜索</button>
+  </div>
+</header>
+
+<div class="categories">
+  <button class="cat-btn active" onclick="filterCategory('all', this)">全部</button>
+  <button class="cat-btn" onclick="filterCategory('写作', this)">✍️ 写作</button>
+  <button class="cat-btn" onclick="filterCategory('绘图', this)">🎨 绘图</button>
+  <button class="cat-btn" onclick="filterCategory('编程', this)">💻 编程</button>
+  <button class="cat-btn" onclick="filterCategory('视频', this)">🎬 视频</button>
+  <button class="cat-btn" onclick="filterCategory('对话', this)">💬 对话</button>
+  <button class="cat-btn" onclick="filterCategory('办公', this)">📊 办公</button>
+  <button class="cat-btn" onclick="filterCategory('音频', this)">🎵 音频</button>
+  <button class="cat-btn" onclick="filterCategory('搜索', this)">🔍 搜索</button>
+</div>
+
+<div class="container" id="mainContainer">
+  <!-- 对话 -->
+  <div class="section" data-category="对话">
+    <h2>💬 AI对话</h2>
+    <div class="grid">
+      <a class="card" href="https://chat.openai.com" target="_blank" data-category="对话" data-name="ChatGPT">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🤖</div><div><div class="card-name">ChatGPT</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">OpenAI出品，全球最强对话AI，GPT-4o支持图文理解</div>
+      </a>
+      <a class="card" href="https://claude.ai" target="_blank" data-category="对话" data-name="Claude">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🧠</div><div><div class="card-name">Claude</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">Anthropic出品，长文本理解超强，写作辅助首选</div>
+      </a>
+      <a class="card" href="https://gemini.google.com" target="_blank" data-category="对话" data-name="Gemini">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">✨</div><div><div class="card-name">Gemini</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">Google出品，深度整合搜索，实时联网查询</div>
+      </a>
+      <a class="card" href="https://kimi.moonshot.cn" target="_blank" data-category="对话" data-name="Kimi">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">🌙</div><div><div class="card-name">Kimi</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">月之暗面出品，支持200万字超长文档，国内可用</div>
+      </a>
+      <a class="card" href="https://tongyi.aliyun.com" target="_blank" data-category="对话" data-name="通义千问">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">🔵</div><div><div class="card-name">通义千问</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">阿里云出品，中文理解强，支持文件/图片分析</div>
+      </a>
+      <a class="card" href="https://doubao.com" target="_blank" data-category="对话" data-name="豆包">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">🫘</div><div><div class="card-name">豆包</div><div class="card-tag">对话</div></div></div>
+        <div class="card-desc">字节跳动出品，响应快，支持角色扮演</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 写作 -->
+  <div class="section" data-category="写作">
+    <h2>✍️ AI写作</h2>
+    <div class="grid">
+      <a class="card" href="https://notion.so/ai" target="_blank" data-category="写作" data-name="Notion AI">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">📝</div><div><div class="card-name">Notion AI</div><div class="card-tag">写作</div></div></div>
+        <div class="card-desc">集成在Notion中，文档写作/总结/翻译一键完成</div>
+      </a>
+      <a class="card" href="https://www.jasper.ai" target="_blank" data-category="写作" data-name="Jasper">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">🖊️</div><div><div class="card-name">Jasper</div><div class="card-tag">写作</div></div></div>
+        <div class="card-desc">营销内容写作专家，模板丰富，支持多种语气</div>
+      </a>
+      <a class="card" href="https://copy.ai" target="_blank" data-category="写作" data-name="Copy.ai">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">📋</div><div><div class="card-name">Copy.ai</div><div class="card-tag">写作</div></div></div>
+        <div class="card-desc">广告文案、社媒内容生成，模板2000+</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 绘图 -->
+  <div class="section" data-category="绘图">
+    <h2>🎨 AI绘图</h2>
+    <div class="grid">
+      <a class="card" href="https://midjourney.com" target="_blank" data-category="绘图" data-name="Midjourney">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">🎨</div><div><div class="card-name">Midjourney</div><div class="card-tag">绘图</div></div></div>
+        <div class="card-desc">目前画质最佳的AI绘图工具，艺术风格多样</div>
+      </a>
+      <a class="card" href="https://www.imagine.art" target="_blank" data-category="绘图" data-name="DALL-E 3">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🖼️</div><div><div class="card-name">DALL-E 3</div><div class="card-tag">绘图</div></div></div>
+        <div class="card-desc">OpenAI出品，文字理解准确，适合创意配图</div>
+      </a>
+      <a class="card" href="https://stability.ai" target="_blank" data-category="绘图" data-name="Stable Diffusion">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">🌊</div><div><div class="card-name">Stable Diffusion</div><div class="card-tag">绘图</div></div></div>
+        <div class="card-desc">开源免费，可本地部署，高度可定制</div>
+      </a>
+      <a class="card" href="https://www.canva.com/ai-image-generator" target="_blank" data-category="绘图" data-name="Canva AI">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🖌️</div><div><div class="card-name">Canva AI</div><div class="card-tag">绘图</div></div></div>
+        <div class="card-desc">设计+AI绘图一体，适合社媒配图快速出图</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 编程 -->
+  <div class="section" data-category="编程">
+    <h2>💻 AI编程</h2>
+    <div class="grid">
+      <a class="card" href="https://cursor.sh" target="_blank" data-category="编程" data-name="Cursor">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">⚡</div><div><div class="card-name">Cursor</div><div class="card-tag">编程</div></div></div>
+        <div class="card-desc">AI编程神器，基于VSCode，自动补全/改bug/解释代码</div>
+      </a>
+      <a class="card" href="https://github.com/features/copilot" target="_blank" data-category="编程" data-name="GitHub Copilot">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">🐙</div><div><div class="card-name">GitHub Copilot</div><div class="card-tag">编程</div></div></div>
+        <div class="card-desc">代码补全标杆，支持所有主流IDE，学生免费</div>
+      </a>
+      <a class="card" href="https://v0.dev" target="_blank" data-category="编程" data-name="v0.dev">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🎯</div><div><div class="card-name">v0.dev</div><div class="card-tag">编程</div></div></div>
+        <div class="card-desc">Vercel出品，文字描述生成React/UI组件，前端神器</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 视频 -->
+  <div class="section" data-category="视频">
+    <h2>🎬 AI视频</h2>
+    <div class="grid">
+      <a class="card" href="https://sora.com" target="_blank" data-category="视频" data-name="Sora">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">🎥</div><div><div class="card-name">Sora</div><div class="card-tag">视频</div></div></div>
+        <div class="card-desc">OpenAI出品文生视频，质量极高，现已开放</div>
+      </a>
+      <a class="card" href="https://runwayml.com" target="_blank" data-category="视频" data-name="Runway">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🛫</div><div><div class="card-name">Runway</div><div class="card-tag">视频</div></div></div>
+        <div class="card-desc">图生视频/文生视频，好莱坞级别特效</div>
+      </a>
+      <a class="card" href="https://www.heygen.com" target="_blank" data-category="视频" data-name="HeyGen">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">👤</div><div><div class="card-name">HeyGen</div><div class="card-tag">视频</div></div></div>
+        <div class="card-desc">AI数字人视频，输入文字自动生成讲解视频</div>
+      </a>
+      <a class="card" href="https://www.capcut.cn" target="_blank" data-category="视频" data-name="剪映">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">✂️</div><div><div class="card-name">剪映</div><div class="card-tag">视频</div></div></div>
+        <div class="card-desc">字节跳动出品，AI自动字幕/配乐/剪辑，国内首选</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 搜索 -->
+  <div class="section" data-category="搜索">
+    <h2>🔍 AI搜索</h2>
+    <div class="grid">
+      <a class="card" href="https://perplexity.ai" target="_blank" data-category="搜索" data-name="Perplexity">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🔮</div><div><div class="card-name">Perplexity</div><div class="card-tag">搜索</div></div></div>
+        <div class="card-desc">AI搜索引擎，实时联网，带引用来源，告别广告</div>
+      </a>
+      <a class="card" href="https://you.com" target="_blank" data-category="搜索" data-name="You.com">
+        <span class="card-free free">免费</span>
+        <div class="card-header"><div class="card-icon">🔍</div><div><div class="card-name">You.com</div><div class="card-tag">搜索</div></div></div>
+        <div class="card-desc">AI增强搜索，支持代码搜索、图片搜索</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 办公 -->
+  <div class="section" data-category="办公">
+    <h2>📊 AI办公</h2>
+    <div class="grid">
+      <a class="card" href="https://www.microsoft.com/zh-cn/microsoft-365/copilot/microsoft-365-copilot" target="_blank" data-category="办公" data-name="Microsoft Copilot">
+        <span class="card-free paid">付费</span>
+        <div class="card-header"><div class="card-icon">🪟</div><div><div class="card-name">Microsoft Copilot</div><div class="card-tag">办公</div></div></div>
+        <div class="card-desc">深度整合Word/Excel/PPT，办公效率翻倍</div>
+      </a>
+      <a class="card" href="https://gamma.app" target="_blank" data-category="办公" data-name="Gamma">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">📊</div><div><div class="card-name">Gamma</div><div class="card-tag">办公</div></div></div>
+        <div class="card-desc">AI一键生成精美PPT/文档，告别手动排版</div>
+      </a>
+      <a class="card" href="https://www.beautiful.ai" target="_blank" data-category="办公" data-name="Beautiful.ai">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">💎</div><div><div class="card-name">Beautiful.ai</div><div class="card-tag">办公</div></div></div>
+        <div class="card-desc">智能PPT设计，自动调整布局，专业美观</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 音频 -->
+  <div class="section" data-category="音频">
+    <h2>🎵 AI音频</h2>
+    <div class="grid">
+      <a class="card" href="https://suno.ai" target="_blank" data-category="音频" data-name="Suno">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🎵</div><div><div class="card-name">Suno</div><div class="card-tag">音频</div></div></div>
+        <div class="card-desc">文字生成完整歌曲，含人声，质量惊人</div>
+      </a>
+      <a class="card" href="https://elevenlabs.io" target="_blank" data-category="音频" data-name="ElevenLabs">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🎙️</div><div><div class="card-name">ElevenLabs</div><div class="card-tag">音频</div></div></div>
+        <div class="card-desc">最真实的AI语音合成，声音克隆，配音神器</div>
+      </a>
+      <a class="card" href="https://www.udio.com" target="_blank" data-category="音频" data-name="Udio">
+        <span class="card-free freemium">免费+</span>
+        <div class="card-header"><div class="card-icon">🎶</div><div><div class="card-name">Udio</div><div class="card-tag">音频</div></div></div>
+        <div class="card-desc">AI作曲工具，风格多样，适合视频配乐</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>🤖 AI工具导航 · 每日更新 · <a href="https://github.com/veni-bao" target="_blank">GitHub</a></p>
+  <p style="margin-top:8px">收录工具 30+ · 如需提交工具请联系我们</p>
+</footer>
+
+<script>
+  let currentCategory = 'all';
+
+  function filterCategory(cat, btn) {
+    currentCategory = cat;
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTools();
+  }
+
+  function filterTools() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    document.querySelectorAll('.section').forEach(section => {
+      const sectionCat = section.dataset.category;
+      const catMatch = currentCategory === 'all' || sectionCat === currentCategory;
+      let hasVisible = false;
+
+      section.querySelectorAll('.card').forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
+        const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+        const queryMatch = !query || name.includes(query) || desc.includes(query);
+        const visible = catMatch && queryMatch;
+        card.style.display = visible ? 'block' : 'none';
+        if (visible) hasVisible = true;
+      });
+
+      section.style.display = hasVisible ? 'block' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
