@@ -1,0 +1,69 @@
+{
+  "links": [
+    {
+      "id": "lnk_1772387806",
+      "name": "Notion Pro版",
+      "original_url": "https://notion.so/pricing",
+      "affiliate_url": "https://notion.so/pricing?ref=YOUR_ID",
+      "platform": "Notion联盟",
+      "commission_rate": 50.0,
+      "product_price": 96.0,
+      "category": "AI工具",
+      "notes": "海外SaaS，佣金50%，通过联盟后台获取专属链接",
+      "clicks": 50,
+      "conversions": 3,
+      "total_commission": 144.0,
+      "created_at": "2026-03-02T01:56:46.509626",
+      "updated_at": "2026-03-02T01:56:46.509641"
+    },
+    {
+      "id": "lnk_1772387806",
+      "name": "Cursor Pro订阅",
+      "original_url": "https://cursor.sh/pricing",
+      "affiliate_url": "https://cursor.sh/pricing?ref=YOUR_ID",
+      "platform": "Cursor联盟",
+      "commission_rate": 20.0,
+      "product_price": 240.0,
+      "category": "AI工具",
+      "notes": "AI编程工具，程序员群体转化率高",
+      "clicks": 120,
+      "conversions": 8,
+      "total_commission": 384.0,
+      "created_at": "2026-03-02T01:56:46.582828",
+      "updated_at": "2026-03-02T01:56:46.582836"
+    },
+    {
+      "id": "lnk_1772387806",
+      "name": "京东联盟-机械键盘",
+      "original_url": "https://item.jd.com/xxxxx.html",
+      "affiliate_url": "https://union-click.jd.com/jdc?xxxxx",
+      "platform": "京东联盟",
+      "commission_rate": 3.0,
+      "product_price": 299.0,
+      "category": "数码外设",
+      "notes": "学习用品，大学生群体相关度高",
+      "clicks": 30,
+      "conversions": 1,
+      "total_commission": 8.97,
+      "created_at": "2026-03-02T01:56:46.668300",
+      "updated_at": "2026-03-02T01:56:46.668307"
+    },
+    {
+      "id": "lnk_1772387806",
+      "name": "爱发卡-雅思资料包",
+      "original_url": "https://ifdian.net/xxxxx",
+      "affiliate_url": "https://ifdian.net/xxxxx?ref=YOUR_ID",
+      "platform": "爱发卡",
+      "commission_rate": 15.0,
+      "product_price": 49.0,
+      "category": "考试备考",
+      "notes": "自己发布的资料包，这里只是示例",
+      "clicks": 80,
+      "conversions": 12,
+      "total_commission": 88.2,
+      "created_at": "2026-03-02T01:56:46.698263",
+      "updated_at": "2026-03-02T01:56:46.698271"
+    }
+  ],
+  "stats": {}
+}
